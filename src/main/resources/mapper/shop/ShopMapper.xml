@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--suppress ALL -->
+<mapper namespace="com.bhhan.mybatis.springbootmybatis.repository.shop.ShopRepository">
+    <select id="list" resultType="com.bhhan.mybatis.springbootmybatis.domain.Shop">
+        SELECT SHOP_NO, SHOP_NAME, SHOP_LOCATION, SHOP_STATUS
+        FROM SHOPS
+    </select>
+
+    <insert id="add" parameterType="com.bhhan.mybatis.springbootmybatis.domain.Shop" useGeneratedKeys="true" keyProperty="shopNo">
+        INSERT INTO SHOPS(SHOP_NO, SHOP_NAME, SHOP_LOCATION, SHOP_STATUS)
+        VALUES (#{shopNo}, #{shopName}, #{shopLocation}, #{shopStatus})
+    </insert>
+</mapper>

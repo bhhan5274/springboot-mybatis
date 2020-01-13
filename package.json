@@ -1,0 +1,14 @@
+{
+  "name": "springboot-mybatis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass --watch src/main/resources/static/scss/ --output src/main/resources/static/css/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}

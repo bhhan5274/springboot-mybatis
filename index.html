@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/main/resources/static/css/custom.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <title>::SpringBoot With Mybatis::</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="store">
+                    <div class="store__list-title"><i class="fas fa-store text-primary"></i> Store List</div>
+                    <div class="store__table">
+                        <table class="table table-bordered table-sm table-responsive-md">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">location</th>
+                                <th scope="col">status</th>
+                                <th scope="col" class="text-center">view</th>
+                                <th scope="col" class="text-center">modify</th>
+                                <th scope="col" class="text-center">delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">{{shopNo}}</th>
+                                <td>{{shopName}}</td>
+                                <td>{{shopLocation}}</td>
+                                <td>{{shopStatus}}</td>
+                                <td class="text-center"><button class="store__btn-view btn btn-primary btn-sm">view</button></td>
+                                <td class="text-center"><button class="store__btn-modify btn btn-secondary font-weight-bold btn-sm">modify</button></td>
+                                <td class="text-center"><button class="store__btn-delete btn btn-danger font-weight-bold btn-sm">delete</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="store__table-footer text-right">
+                        <button class="btn btn-sm btn-outline-primary store__btn-add font-weight-bold">Add Shop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <div class="store">
+                    <div class="store__list-title"><i class="fas fa-plus-square text-primary"></i> Store Register</div>
+                    <div class="store__table">
+                        <table class="table table-bordered table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">content</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">shop_name</th>
+                                    <td><input type="text" class="form-control" id="shopName"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">shop_location</th>
+                                    <td><input type="text" class="form-control" id="shopLocation"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">shop_status</th>
+                                    <td>
+                                        <select id="shopStatus" class="form-control">
+                                            <option value="Y" selected>Y</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="store__table-footer text-right">
+                        <button class="btn btn-sm btn-outline-primary store__btn-add font-weight-bold">Add Shop</button>
+                        <button class="btn btn-sm btn-outline-secondary store__btn-add font-weight-bold">Go Back</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/main/resources/static/js/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>
