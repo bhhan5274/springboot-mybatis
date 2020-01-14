@@ -6,16 +6,12 @@ com.bhhan.mybatis.shop = {
 
         var self = this;
 
-        $('#store__btn-view').on('click', function(){
-
-        });
-
         $('#store__btn-modify').on('click', function(){
             self.updateShop();
         });
 
-        $('#store__btn-delete').on('click', function(){
-            self.deleteShop();
+        $('.store__btn-delete').on('click', function(e){
+            self.deleteShop(e.target.getAttribute("data-shopNo"));
         });
 
         $('#store__btn-add').on('click', function(){
@@ -43,11 +39,40 @@ com.bhhan.mybatis.shop = {
         });
     },
     updateShop: function(){
+        var sendData = {
+            shopNo: $('#shopNo').val(),
+            shopName: $('#shopName').val(),
+            shopLocation: $('#shopLocation').val(),
+            shopStatus: $('#shopStatus').val()
+        };
 
+        $.ajax({
+            type: 'PUT',
+            url: '/shop/modify',
+            dataType: 'json',
+            data: JSON.stringify(sendData),
+            contentType: 'application/json;charset=utf-8'
+        }).done(function (number) {
+            alert(number + '번 글이 수정되었습니다.');
+            window.location.href = '/shop/list';
+        }).fail(function(error){
+            alert(JSON.stringify(error));
+        });
     },
-    deleteShop: function(){
-
+    deleteShop: function(shopNo){
+        console.log(shopNo);
+        $.ajax({
+            type: 'DELETE',
+            url: '/shop/delete/' + shopNo
+        }).done(function (number) {
+            alert(number + '번 글이 삭제되었습니다.');
+            window.location.href = '/shop/list';
+        }).fail(function(error){
+            alert(JSON.stringify(error));
+        });
     }
 };
 
-com.bhhan.mybatis.shop.init();
+$(document).ready(function(){
+    com.bhhan.mybatis.shop.init();
+});

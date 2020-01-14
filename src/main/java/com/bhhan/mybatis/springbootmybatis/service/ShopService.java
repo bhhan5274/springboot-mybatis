@@ -33,4 +33,21 @@ public class ShopService {
         shopRepository.add(shop);
         return shop.getShopNo();
     }
+
+    @Transactional(readOnly = true)
+    public Shop findByShopNo(Long shopNo){
+        return shopRepository.findByShopNo(shopNo);
+    }
+
+    @Transactional
+    public Long modify(Shop shop){
+        shopRepository.modify(shop);
+        return shop.getShopNo();
+    }
+
+    @Transactional
+    public Long delete(Long shopNo) {
+        shopRepository.delete(shopNo);
+        return shopNo;
+    }
 }

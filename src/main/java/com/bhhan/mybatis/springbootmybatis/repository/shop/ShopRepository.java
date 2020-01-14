@@ -16,4 +16,10 @@ public interface ShopRepository {
     List<Shop> list();
 
     Long add(Shop shop);
+
+    Shop findByShopNo(Long shopNo);
+
+    Long modify(Shop shop);
+
+    Long delete(Long shopNo);
 }

@@ -1,0 +1,40 @@
+{{>layout/header}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="store">
+                    <div class="store__list-title"><i class="fas fa-search text-primary"></i> Store View</div>
+                    <div class="store__table">
+                        <table class="table table-bordered table-sm">
+                            <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">content</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">shop_name</th>
+                                <td><input type="text" class="form-control" value="{{shopName}}" readonly></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">shop_location</th>
+                                <td><input type="text" class="form-control" value="{{shopLocation}}" readonly></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">shop_status</th>
+                                <td>
+                                    <input class="form-control" value="{{shopStatus}}" readonly>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="store__table-footer text-right">
+                        <a href="/shop/list" class="btn btn-sm btn-outline-secondary store__btn-add font-weight-bold">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{>layout/footer}}

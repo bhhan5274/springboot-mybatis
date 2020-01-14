@@ -5,7 +5,7 @@
             <div class="store">
                 <div class="store__list-title"><i class="fas fa-store text-primary"></i> Store List</div>
                 <div class="store__table">
-                    <table class="table table-bordered table-sm table-responsive-md">
+                    <table class="table table-bordered table-sm table-responsive-lg">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
@@ -27,9 +27,9 @@
                             <td>{{shopName}}</td>
                             <td>{{shopLocation}}</td>
                             <td>{{shopStatus}}</td>
-                            <td class="text-center"><button id="store__btn-view" class="btn btn-primary btn-sm">view</button></td>
-                            <td class="text-center"><button id="store__btn-modify" class="btn btn-secondary btn-sm">modify</button></td>
-                            <td class="text-center"><button id="store__btn-delete" class="btn btn-danger btn-sm">delete</button></td>
+                            <td class="text-center"><a href="/shop/view/{{shopNo}}" class="btn btn-primary btn-sm">view</a></td>
+                            <td class="text-center"><a href="/shop/modify/{{shopNo}}" class="btn btn-secondary btn-sm">modify</a></td>
+                            <td class="text-center"><button class="btn btn-danger btn-sm store__btn-delete" data-shopNo="{{shopNo}}">delete</button></td>
                         </tr>
                         {{/shops}}
                         </tbody>

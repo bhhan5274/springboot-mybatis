@@ -14,4 +14,25 @@
         INSERT INTO SHOPS(SHOP_NO, SHOP_NAME, SHOP_LOCATION, SHOP_STATUS)
         VALUES (#{shopNo}, #{shopName}, #{shopLocation}, #{shopStatus})
     </insert>
+
+    <select id="findByShopNo" resultType="com.bhhan.mybatis.springbootmybatis.domain.Shop" parameterType="long">
+        SELECT SHOP_NO, SHOP_NAME, SHOP_LOCATION, SHOP_STATUS
+        FROM SHOPS
+        WHERE SHOP_NO = #{shopNo}
+    </select>
+
+    <update id="modify" parameterType="com.bhhan.mybatis.springbootmybatis.domain.Shop">
+        UPDATE SHOPS
+        <set>
+            <if test="shopName != null">SHOP_NAME = #{shopName},</if>
+            <if test="shopLocation != null">SHOP_LOCATION = #{shopLocation},</if>
+            <if test="shopStatus != null">SHOP_STATUS = #{shopStatus},</if>
+        </set>
+        WHERE SHOP_NO = #{shopNo}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM SHOPS
+        WHERE SHOP_NO = #{shopNo}
+    </delete>
 </mapper>
